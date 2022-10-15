@@ -1,0 +1,1 @@
+# AHK_WoW_rota_script
