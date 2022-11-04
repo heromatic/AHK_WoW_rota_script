@@ -9,7 +9,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 {
 $2::
 While GetKeyState("2","p"){
-	PixelGetColor, color, 2498, 396, BGB
+	PixelGetColor, color, 2498, 396,
 	If (color = 0x37376B)
 	{
 	Send, {6}
