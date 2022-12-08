@@ -1,4 +1,4 @@
-﻿#SingleInstance force
+#SingleInstance force
 menu, tray, add 
 return
 
@@ -29,7 +29,7 @@ gui, add, Progress, xp-7.5 yp+35 w50 h50 c%cRGB%,100
 gui, font, s10, Verdana
 gui, add, text, yp+40 xp-65, Version: 1.03 (31.03.2014)
 gui, add, text, xp+10 yp+20.5, Window Size: %w% x %h%
-gui, add, button, xp-10 yp+20.5 w180 h20 gWS, Copy Window Size
+gui, add, button, xp-10 yp+20.5 w180 h20 gWS, Rota Constructor
 gui, add, button, xp yp+20.5 w180 h20 gARF, Copy ARFormula
 gui, add, button, xp yp+20.5 w180 h40 gARFB, Copy ARFormula with Border Calculations
 gui, show,, Position/Colour of X&Y
@@ -52,7 +52,15 @@ return
 }
 WS:
 {
-clipboard = %w% %h%
+clipboard = 
+(
+    PixelGetColor, color, %PosX%, %PosY%, BGB
+	If (color = %cBGR%)
+	{
+	Send, {}
+	Sleep 20
+	}
+    )
 return
 }
 ARF:
